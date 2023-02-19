@@ -1,8 +1,9 @@
+import ProductCard from '../components/ProductCard.js';
+import {Fragment, useEffect,useState} from 'react';
 
 
 
-
-export default function Products(){
+export default function Shop(){
 
 // useState
 const [products, setProducts] = useState([]);
@@ -18,17 +19,19 @@ const [products, setProducts] = useState([]);
 
 			//to change value of products
 			setProducts(data.map(products =>{
-				return ( <ProductCard key = {product._id} productProp = {product}/> )
+				return ( <ProductCard key = {products._id} productProp = {products}/> )
 			}))
 		})
 
 	},[])
 
+
 	return(
 
 		<Fragment>
-			<h1 className="text-center mt-3"> Products </h1>
+			<h1 className="text-center mt-3"> Shop </h1>
 			{products}
+	
 		</Fragment>
 
 		)

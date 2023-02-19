@@ -2,13 +2,13 @@ import './App.css';
 
 
 import AppNavBar from './components/AppNavBar.js';
-// import FlippableCard from './components/FlippableCard.js';
 
-import PageNotFound from "./pages/PageNotFound.js";
+// import PageNotFound from "./pages/PageNotFound.js";
 import Home from './pages/Home.js';
 import Register from './pages/Register.js';
 import Login from './pages/Login.js';
 import Logout from './pages/Logout.js';
+import Shop from './pages/Shop.js';
 
 import {useState,useEffect} from 'react'
 
@@ -48,11 +48,12 @@ function App() {
       <AppNavBar/>
       {/*<FlippableCard/>*/}
         <Routes>
-        <Route path ='*' element = {<PageNotFound/>}/>
+        {/*<Route path ='*' element = {<PageNotFound/>}/>*/}
         <Route path ='/' element = {<Home/>}/>
         <Route path ='/register' element = {<Register/>}/>
         <Route path ='/login' element = {<Login/>}/>
         <Route path ='/logout' element = {<Logout/>}/>
+        <Route path ='/shop' element = {<Shop/>}/>
 
 
         </Routes>

@@ -17,19 +17,13 @@ export default function AppNavBar(){
 
 	return(
 		<Navbar collapseOnSelect expand="lg" className="navbar navbar-dark">
-		     <Container>
-		       <Navbar.Brand href="#"><img className="logo" src={logo} height="70px" width="70px"/></Navbar.Brand>
+		       <Navbar.Brand href="#"><img className="logo mx-5" src={logo} height="70px" width="70px"/></Navbar.Brand>
 		       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 		       <Navbar.Collapse id="responsive-navbar-nav">
 		         <Nav className="me-auto">
 		           <Nav.Link as = {NavLink} to = '/'>Home</Nav.Link>
 		           <Nav.Link  as = {NavLink} to = '/sale'>Sale</Nav.Link>
-		           <NavDropdown title="Shop" id="navbarScrollingDropdown">
-		              <NavDropdown.Item  as = {NavLink} to = '/bags'>Bags</NavDropdown.Item>
-		              <NavDropdown.Item  as = {NavLink} to = '/shirts'>Shirts</NavDropdown.Item>
-		              <NavDropdown.Item  as = {NavLink} to = '/Headwears'> Headwears</NavDropdown.Item>
-		              <NavDropdown.Item  as = {NavLink} to = '/Stickers'> Stickers</NavDropdown.Item>
-		            </NavDropdown>
+		           <Nav.Link  as = {NavLink} to = '/shop'>Shop</Nav.Link>
 		            <NavDropdown title="Partners" id="navbarScrollingDropdown">
 		              <NavDropdown.Item href="#action5">Bergel</NavDropdown.Item>
 		              <NavDropdown.Item href="#action6">Cong Clothing</NavDropdown.Item>
@@ -43,7 +37,7 @@ export default function AppNavBar(){
 		            <Nav.Link  as = {NavLink} to = '/contact'>Contact</Nav.Link>
 
 		         </Nav>
-		         <Nav>
+		         <Nav className="mx-5">
 {/*Ternary Condition*/}
 		         {
 		         	user?
@@ -64,7 +58,6 @@ export default function AppNavBar(){
 		          
 		         </Nav>
 		       </Navbar.Collapse>
-		     </Container>
 		   </Navbar>
 		)
 }

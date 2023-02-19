@@ -1,17 +1,41 @@
-
+import {Button, Card, Row, Col} from 'react-bootstrap'
+import {useState, useEffect, useContext} from 'react';
+import UserContext from '../UserContext.js'
+import {Link} from 'react-router-dom'
 
 export default function ProductCard({productProp}) {
 
 	const {_id,productName,description,category,price} = productProp;
 
 // useStates
+	const [stocks, setStocks] = useState(10);
+	const [isDisabled,setIsDisabled] = useState(false)
+
+
 	const {user} = useContext(UserContext)
-	const [stocks, setStocks] = useState('');
+
+	function checkStocks(){
+		if (stocks > 1){
+			setStocks(stocks -1)	
+		} else{
+			alert ("Out of Stocks. Please try again later.")
+			// just forsake of disabling button and prompting alert message
+			setStocks(stocks -1)
+		}
+	}
+
+
+
+	useEffect(()=> {
+		if(stocks === 0){
+			setIsDisabled(true);
+		}
+	},[stocks])
 
 
 	return(
 				<Row className = "mt-0 p-5">
-						{/*Course Cards*/}
+						{/*Product Card*/}
 					<Col>
 						<Card>
 						     <Card.Body>
@@ -30,7 +54,7 @@ export default function ProductCard({productProp}) {
 						       	{//if user is logged in
 						       		user?
 
-						        <Button as = {Link} to = {`/course/${_id}`} disabled={isDisabled} variant="primary">See details</Button>
+						        <Button as = {Link} to = {`/shop/${_id}`} disabled={isDisabled} variant="primary">See details</Button>
 						        :
 						        //if user is logged out
 						        <Button as = {Link} to ='/Login' variant="primary">Login</Button>

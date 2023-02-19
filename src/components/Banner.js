@@ -4,7 +4,7 @@ import {BsSearch} from "react-icons/bs";
 import {Fragment} from 'react'
 
 // Images
-import white from '../images/logo.png'
+// import white from '../images/logo.png'
 import l1 from '../images/models/l1.jpg'
 import l2 from '../images/models/l2.jpg'
 // import s1 from '../images/models/s1.jpg'
@@ -46,17 +46,17 @@ export default function Banner(){
 		<Container class1="home-wrapper-1 px-5 py-0 container-fluid">
 			<Row className="row p-5">
 	          <Col className="col col-5">
-	              <img src= {white} className="img-fluid rounded-3 main-banner" alt="main banner"/>
+	              <img src= {l2} className="img-fluid rounded-3 main-banner" alt="main banner"/>
 	           </Col>
 
 	          <Col className="col">
-	               <img src={white} className="img-fluid rounded-3" alt="small banner"/>
-	               <img src={white} className="img-fluid rounded-3" alt="small banner"/>
+	               <img src={p1} className="img-fluid rounded-3" alt="small banner"/>
+	               <img src={m23} className="img-fluid rounded-3" alt="small banner"/>
 	          </Col>
 
 	          <Col className="col">
-	               <img src={white} className="img-fluid rounded-3" alt="small banner"/>
-	               <img src={white} className="img-fluid rounded-3" alt="small banner"/>
+	               <img src={m25} className="img-fluid rounded-3" alt="small banner"/>
+	               <img src={p2} className="img-fluid rounded-3" alt="small banner"/>
 	           </Col>
 	            
 	        </Row>
