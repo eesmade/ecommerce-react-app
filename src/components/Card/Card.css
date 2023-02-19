@@ -1,0 +1,47 @@
+/*Global Reset*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.card{
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: 5px solid white;
+  box-shadow: 0 0 15px #000000;
+}
+
+
+.card-back, .card-front{
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Montserrat;
+  font-weight: 800;
+  font-size: 60px;
+  color: white;
+}
+
+
+.card-front{
+  background-color: #7FB069; 
+}
+
+
+
+.card-back{
+  background-color: #CA3C25; 
+}
+
+
+
+
+
