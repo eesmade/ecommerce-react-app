@@ -82,7 +82,7 @@ export default function Login(){
 				Swal.fire({
 					title: 'Authentication succesful!',
 					icon: 'success',
-					text: 'Happy Shopping!'
+					text: 'Welcome to ArtShirt Kapital!'
 				})
 
 				navigate('/');
@@ -155,7 +155,7 @@ export default function Login(){
 		{/*Ternary Condition*/}
 				      {
 				         	isActive?
-				      	   	<Button variant="primary" type="submit">
+				      	   	<Button variant="dark" type="submit">
 				              Submit
 				            </Button>
 				            :

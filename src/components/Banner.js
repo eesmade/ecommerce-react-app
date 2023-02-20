@@ -37,7 +37,6 @@ export default function Banner(){
 		                </span>
 		              </div>
 		            </div>
-
 				</Col>
 			</Row>
 

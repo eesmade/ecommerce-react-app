@@ -16,11 +16,33 @@ export default function AppNavBar(){
 
 
 	return(
-		<Navbar collapseOnSelect expand="lg" className="navbar navbar-dark">
-		       <Navbar.Brand href="#"><img className="logo mx-5" src={logo} height="70px" width="70px"/></Navbar.Brand>
-		       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+		<Fragment>
+		{/*Top Banner*/}
+		<div className="container-fluid text-center fixed-top" id="banner">
+		     <div className="row">
+		         <h6> Free shipping for orders worth ₱2000 and above </h6>
+		     </div>
+		</div>
+
+		{/*Main Nav*/}
+		<Navbar collapseOnSelect expand="lg" className="navbar navbar-dark mt-3 mb-0 pb-0 container-fluid">
+		       <Navbar.Brand href="#"><img className="logo mx-4" src={logo} height="70px" width="70px"/></Navbar.Brand>
+		       <Navbar.Toggle aria-controls="responsive-navbar-nav" className="mx-2" />
 		       <Navbar.Collapse id="responsive-navbar-nav">
 		         <Nav className="me-auto">
+		         {
+
+		         	user && user.isAdmin?
+		         	<Fragment>
+		         	<Nav.Link as = {NavLink} to = '/'>Home</Nav.Link>
+		         	<Nav.Link as ={NavLink} to='/admin/products'>Products</Nav.Link>
+		         	<Nav.Link as ={NavLink} to='/admin/orders'>Orders</Nav.Link>
+		         	</Fragment>
+
+
+		         	:
+
+		         <Fragment>
 		           <Nav.Link as = {NavLink} to = '/'>Home</Nav.Link>
 		           <Nav.Link  as = {NavLink} to = '/sale'>Sale</Nav.Link>
 		           <Nav.Link  as = {NavLink} to = '/shop'>Shop</Nav.Link>
@@ -35,9 +57,14 @@ export default function AppNavBar(){
 		              </NavDropdown.Item>
 		            </NavDropdown>
 		            <Nav.Link  as = {NavLink} to = '/contact'>Contact</Nav.Link>
+		            </Fragment>
+		         }
 
 		         </Nav>
+		         
+
 		         <Nav className="mx-5">
+		          <Nav.Link  as = {NavLink} to = '/myOrders'>My Orders</Nav.Link>
 {/*Ternary Condition*/}
 		         {
 		         	user?
@@ -59,5 +86,7 @@ export default function AppNavBar(){
 		         </Nav>
 		       </Navbar.Collapse>
 		   </Navbar>
+		 </Fragment>
 		)
 }
+

@@ -85,7 +85,7 @@ export default function() {
 						Swal.fire({
 							title: 'Registration complete!',
 							icon: 'success',
-							text: 'Thank you for registering!'
+							text: 'Thank you for signing up!'
 						})
 
 						navigate('/login');
@@ -196,7 +196,7 @@ export default function() {
 					      <Form.Group className="d-flex justify-content-center mt-3">
 						   {
 						   	isActive?
-							   	<Button variant="primary" type="submit">
+							   	<Button variant="dark" type="submit">
 						        Submit
 						      </Button>
 						      :

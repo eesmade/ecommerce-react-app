@@ -5,10 +5,10 @@ import {Link} from 'react-router-dom'
 
 export default function ProductCard({productProp}) {
 
-	const {_id,productName,description,category,price} = productProp;
+	const {_id, productName, description, category, price, isActive} = productProp;
 
 // useStates
-	const [stocks, setStocks] = useState(10);
+	const [stocks, setStocks] = useState('10');
 	const [isDisabled,setIsDisabled] = useState(false)
 
 
@@ -18,8 +18,8 @@ export default function ProductCard({productProp}) {
 		if (stocks > 1){
 			setStocks(stocks -1)	
 		} else{
-			alert ("Out of Stocks. Please try again later.")
-			// just forsake of disabling button and prompting alert message
+			alert ("This item is sold out. We'll update you once stock is available.")
+			// forsake of disabling button and prompting alert message
 			setStocks(stocks -1)
 		}
 	}
@@ -51,10 +51,11 @@ export default function ProductCard({productProp}) {
 
 		{/*Ternary condition*/}
 
-						       	{//if user is logged in
+						       	{
+						       	//if user is logged in
 						       		user?
 
-						        <Button as = {Link} to = {`/shop/${_id}`} disabled={isDisabled} variant="primary">See details</Button>
+						        <Button as = {Link} to = {`/product/${_id}`} disabled={isDisabled} variant="primary">See details</Button>
 						        :
 						        //if user is logged out
 						        <Button as = {Link} to ='/Login' variant="primary">Login</Button>
