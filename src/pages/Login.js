@@ -8,6 +8,10 @@ import UserContext from '../UserContext.js'
 import Swal from 'sweetalert2'
 
 
+import logo from '../images/logo.png'
+
+
+
 export default function Login(){
 
 	// UseStates
@@ -118,13 +122,13 @@ export default function Login(){
 			<Navigate to = '/*' />
 			:
 		<Row className = "m-0 p-5">
-		  <Col className = 'col-md-6 col-10 mx-auto bg-light p-3'>
+		  <Col className = 'col-md-6 col-10 mx-auto bg-dark p-3'>
 			<Fragment>
-				<h1 className="text-center mt-5 mb-5">Login</h1>
+				<div><img className="form-logo" src={logo}/></div>
 				<Form className='m-5' onSubmit={event => login(event)}>
 					{/*Email*/}
 				      <Form.Group className="mb-3" controlId="formBasicEmail">
-				        <Form.Label>Email address</Form.Label>
+				        <Form.Label className='label'>Email address</Form.Label>
 				        <Form.Control 
 				        type="email"
 				        placeholder="Enter email"
@@ -138,7 +142,7 @@ export default function Login(){
 
 				    {/*Password*/}
 				      <Form.Group className="mb-3" controlId="formBasicPassword">
-				        <Form.Label>Password</Form.Label>
+				        <Form.Label className='label'>Password</Form.Label>
 				        <Form.Control
 				        type="password"
 				        placeholder="Password"
@@ -155,12 +159,12 @@ export default function Login(){
 		{/*Ternary Condition*/}
 				      {
 				         	isActive?
-				      	   	<Button variant="dark" type="submit">
-				              Submit
+				      	   	<Button variant="danger" type="submit">
+				              Login
 				            </Button>
 				            :
 				            <Button variant="secondary" type="submit" disabled>
-				              Submit
+				              Login
 				            </Button>
 
 				      }

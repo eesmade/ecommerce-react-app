@@ -25,17 +25,18 @@ export default function ProductDashboard(){
 
 		<Fragment>
 		<Container fluid className="bg-light py-3">
-         	<h2 className='mt-3 mb-5 text-center text-dark'>Products</h2>
+         	{/*<h2 className='mt-3 text-center text-dark'>Products</h2>*/}
+         		<Row >
+                    <Col className='d-flex justify-content-center mt-3 mb-5'>
+                        <Button as={Link} to='/product/add'>Add New Product</Button>
+                    </Col>
+                </Row>
                 <Row>
                 <Col >
                     <ProductTable/>
                 </Col>
                 </Row>
-                <Row >
-                    <Col className='d-flex justify-content-center mt-3'>
-                        <Button as={Link} to='/product/add'>Add New Product</Button>
-                    </Col>
-                </Row>
+                
             </Container>
          </Fragment>
 

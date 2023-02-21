@@ -13,6 +13,7 @@ import Logout from './pages/Logout.js';
 import Shop from './pages/Shop.js';
 import ProductView from './components/ProductView.js'
 import CreateProduct from './components/CreateProduct.js'
+import UpdateProduct from './components/UpdateProduct.js'
 
 
 import {useState,useEffect} from 'react'
@@ -62,6 +63,7 @@ export default function App() {
         <Route path ='/shop' element = {<Shop/>}/>
         <Route path ='/product/:productId' element = {<ProductView/>}/>
         <Route path ='/product/add' element = {<CreateProduct/>}/>
+        <Route path ='/product/update' element = {<UpdateProduct/>}/>
 
 
         </Routes>

@@ -3,12 +3,12 @@ import {Fragment} from 'react'
 
 
 import {useState, useEffect, useContext} from 'react';
-import {Navigate, useNavigate} from 'react-router-dom';
+import {Navigate, useNavigate,useParams} from 'react-router-dom';
 import UserContext from '../UserContext.js';
 import Swal from 'sweetalert2';
 import {Link} from 'react-router-dom';
 
-export default function CreateProduct() {
+export default function UpdateProduct() {
 
 // useStates
     const [productName, setProductName] = useState('');
@@ -21,13 +21,32 @@ export default function CreateProduct() {
     const {user, setUser} = useContext(UserContext);
     const navigate = useNavigate();
 
+    const {productId} = useParams();
 
-// Add Product
-      function addProduct(event) {
+
+// useEffect
+useEffect(()=>{
+        fetch(`${process.env.REACT_APP_API_URL}/product/update/${productId}`)
+        .then(result => result.json())
+        .then(data => {
+            console.log(data)
+            setProductName(data.productName);
+            setDescription(data.description);
+            setCategory(data.category);
+            setPrice(data.price);
+            setStocks(data.stocks);
+        })
+    },[productId])
+
+
+
+
+// Update Product
+      function updateProduct(event) {
         event.preventDefault();
 
-        fetch(`${process.env.REACT_APP_API_URL}/product/add`, {
-            method: 'POST',
+        fetch(`${process.env.REACT_APP_API_URL}/product/update/${productId}`, {
+            method: 'PUT',
             headers: {
                 'Content-Type':'application/json',
                 Authorization:`Bearer ${localStorage.getItem('token')}`
@@ -55,12 +74,12 @@ export default function CreateProduct() {
 					}else{
 				// Success Alert Message
 						Swal.fire({
-							title: 'Added Successfully!',
+							title: 'Updated Successfully!',
 							icon: 'success',
-							text: 'The item has been added!'
+							text: 'The item has been updated!'
 						})
 
-						navigate('/admin/products');
+						navigate('/admin');
 					}
 				})
         .catch(error => console.log(error))
@@ -71,8 +90,8 @@ export default function CreateProduct() {
     <Row className = "m-0 p-5">
     			<Col className = 'col-md-6 col-10 mx-auto bg-light p-3'>
     				<Fragment>
-    					<h1 className="text-center mt-5">Add Product</h1>
-    					<Form className="m-4" onSubmit={event => addProduct(event)}>
+    					<h1 className="text-center mt-5">Update Product</h1>
+    					<Form className="m-4" onSubmit={event => updateProduct(event)}>
 
     						{/*ProductName*/}
     						<Form.Group className="mb-3" controlId="formProductName">
@@ -98,7 +117,7 @@ export default function CreateProduct() {
     					        	/>
     					      </Form.Group>
 
-    					      {/*Category*/}
+                            {/*Category*/}
                               <Form.Group className="mb-3" controlId="formProductCategory">
                                 <Form.Label>Category</Form.Label>
                                 <Form.Control
@@ -109,7 +128,6 @@ export default function CreateProduct() {
                                     required
                                     />
                               </Form.Group>
-    						
 
     					      {/*Price*/}
     					      <Form.Group className="mb-3" controlId="formPrice">
@@ -137,7 +155,7 @@ export default function CreateProduct() {
     					      <Form.Group className="d-flex justify-content-center mt-3">
     				
     							  <Button variant="primary" type="submit" className="px-5">
-    						        Add Product
+    						        Save Changes
     						      </Button>
     						     
     						  </Form.Group>

@@ -196,7 +196,7 @@ export default function() {
 					      <Form.Group className="d-flex justify-content-center mt-3">
 						   {
 						   	isActive?
-							   	<Button variant="dark" type="submit">
+							   	<Button variant="danger" type="submit">
 						        Submit
 						      </Button>
 						      :

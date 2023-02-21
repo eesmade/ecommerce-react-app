@@ -77,7 +77,6 @@ const order =(id) =>{
 	                <Card>
 	                    <Card.Body className="text-center">
 	                        <Card.Title>{productName}</Card.Title>
-	                        <Card.Subtitle>Description:</Card.Subtitle>
 	                        <Card.Text>{description}</Card.Text>
 	                         <Card.Subtitle>Category:</Card.Subtitle>
 	                        <Card.Text>{category}</Card.Text>

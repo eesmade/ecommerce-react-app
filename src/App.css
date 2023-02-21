@@ -12,17 +12,20 @@
 /*NavBar Section*/
 
 #banner{
-  color: #F24C40;
-  background-color:#090B0B ; /*Solid Black*/
-  border-bottom: 1px solid #9B4631;
+  color: white;
+  background-color:#D20F1C ; /*Red*/
+/*  border-bottom: 1px solid #AFACAF;*/
   padding-top: 2px;
 }
 
 
 .navbar {
-  background-color: #141414;/*Night*/
+  background-color: #151415;/*Night*/
 }
 
+.nav-item{
+  margin-right: 3rem;
+}
 
 
 /*Home-Banner*/
@@ -53,3 +56,21 @@
   height: 500px;
   width: 300px;
 }*/
+
+
+/*Login*/
+
+.form-logo{
+  max-height: 8rem;
+  max-width: 8rem;
+  padding: 0;
+  text-align: center;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.label{
+  color: white;
+}

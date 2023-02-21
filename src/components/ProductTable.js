@@ -34,7 +34,7 @@
 
    return (
     <Fragment>
-     <Container>
+     <Container className='text-center'>
        <Table>
          <thead>
              <tr>
@@ -58,7 +58,7 @@
                 <td>{products.stocks}</td>
                 <td>{products.isActive}</td>
                 <td>
-                  <Button className="mx-2">Edit</Button>
+                  <Button className="mx-2" as={Link} to='/product/update'>Update</Button>
                       {
                           isActive ?                    
                           <Button>
