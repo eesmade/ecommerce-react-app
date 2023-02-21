@@ -15,7 +15,7 @@ import Sale from './pages/Sale.js';
 import ProductView from './components/ProductView.js'
 import CreateProduct from './components/CreateProduct.js'
 import UpdateProduct from './components/UpdateProduct.js'
-// import ArchiveProduct from './components/ArchiveProduct.js'
+import ArchiveProduct from './components/ArchiveProduct.js'
 
 
 import {useState,useEffect} from 'react'
@@ -67,7 +67,7 @@ export default function App() {
         <Route path ='/product/:productId' element = {<ProductView/>}/>
         <Route path ='/product/add' element = {<CreateProduct/>}/>
         <Route path ='/update/:productId' element = {<UpdateProduct/>}/>
-        {/*<Route path ='/archive/:productId' element = {<ArchiveProduct/>}/>*/}
+        <Route path ='/archive/:productId' element = {<ArchiveProduct/>}/>
 
 
         </Routes>
