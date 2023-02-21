@@ -8,6 +8,9 @@ import UserContext from '../UserContext.js'
 
 import Swal from 'sweetalert2'
 
+import logo from '../images/logo.png'
+
+
 
 
 
@@ -106,14 +109,14 @@ export default function() {
 		:
 
 		<Row className = "m-0 p-5">
-			<Col className = 'col-md-6 col-10 mx-auto bg-light p-3'>
+			<Col className = 'col-md-6 col-10 mx-auto bg-dark p-3'>
 				<Fragment>
-					<h1 className="text-center mt-5">Register</h1>
+					<div><img className="form-logo" src={logo}/></div>
 					<Form className="m-4" onSubmit={event => register(event)}>
 
 						{/*First Name*/}
 						<Form.Group className="mb-3" controlId="formBasicFirstName">
-					        <Form.Label>First Name</Form.Label>
+					        <Form.Label className='label'>First Name</Form.Label>
 					        <Form.Control
 					        	type="text"
 					        	placeholder="First Name"
@@ -125,7 +128,7 @@ export default function() {
 
 					      {/*Last Name*/}
 						<Form.Group className="mb-3" controlId="formBasicLastName">
-					        <Form.Label>Last Name</Form.Label>
+					        <Form.Label className='label'>Last Name</Form.Label>
 					        <Form.Control
 					        	type="text"
 					        	placeholder="Last Name"
@@ -137,7 +140,7 @@ export default function() {
 
 					      {/*Contact Number*/}
 						<Form.Group className="mb-3" controlId="formBasicMobileNo">
-					        <Form.Label>Contact Number</Form.Label>
+					        <Form.Label className='label'>Contact Number</Form.Label>
 					        <Form.Control
 					        	type="text"
 					        	placeholder="+63 (123) 456789"
@@ -149,7 +152,7 @@ export default function() {
 
 					      {/*Email*/}
 					      <Form.Group className="mb-3" controlId="formBasicEmail">
-					        <Form.Label>Email address</Form.Label>
+					        <Form.Label className='label'>Email address</Form.Label>
 					        <Form.Control 
 					        	type="email"
 					        	placeholder="Enter email"
@@ -164,7 +167,7 @@ export default function() {
 
 					      {/*Password*/}
 					      <Form.Group className="mb-3" controlId="formBasicPassword">
-					        <Form.Label>Password</Form.Label>
+					        <Form.Label className='label'>Password</Form.Label>
 					        <Form.Control
 					        	type="password"
 					        	placeholder="Password"
@@ -176,7 +179,7 @@ export default function() {
 
 					      {/*Confirm Password*/}
 					       <Form.Group className="mb-3" controlId="formBasicConfirmPassword">
-					        <Form.Label>Confirm Password</Form.Label>
+					        <Form.Label className='label'>Confirm Password</Form.Label>
 					        <Form.Control
 					        	type="password"
 					        	placeholder="Confirm your Password"
@@ -197,11 +200,11 @@ export default function() {
 						   {
 						   	isActive?
 							   	<Button variant="danger" type="submit">
-						        Submit
+						        Sign Up
 						      </Button>
 						      :
 						      <Button variant="secondary" type="submit" disabled>
-						        Submit
+						        Sign Up
 						      </Button>
 
 						   }

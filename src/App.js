@@ -11,6 +11,7 @@ import Register from './pages/Register.js';
 import Login from './pages/Login.js';
 import Logout from './pages/Logout.js';
 import Shop from './pages/Shop.js';
+import Sale from './pages/Sale.js';
 import ProductView from './components/ProductView.js'
 import CreateProduct from './components/CreateProduct.js'
 import UpdateProduct from './components/UpdateProduct.js'
@@ -61,6 +62,7 @@ export default function App() {
         <Route path ='/login' element = {<Login/>}/>
         <Route path ='/logout' element = {<Logout/>}/>
         <Route path ='/shop' element = {<Shop/>}/>
+        <Route path ='/sale' element = {<Sale/>}/>
         <Route path ='/product/:productId' element = {<ProductView/>}/>
         <Route path ='/product/add' element = {<CreateProduct/>}/>
         <Route path ='/product/update' element = {<UpdateProduct/>}/>

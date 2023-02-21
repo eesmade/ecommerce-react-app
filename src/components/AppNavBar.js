@@ -38,7 +38,6 @@ export default function AppNavBar(){
 		         	user && user.isAdmin?
 		         	<Fragment>
 		         	<Nav.Link className='nav-item' as = {NavLink} to = '/'>Home</Nav.Link>
-		         	<Nav.Link className='nav-item' as = {NavLink} to = '/sale'>Sale</Nav.Link>
 		         	<Nav.Link  className='nav-item' as ={NavLink} to='/admin/products'>Products</Nav.Link>
 		         	<Nav.Link  className='nav-item' as ={NavLink} to='/admin/orders'>Orders</Nav.Link>
 
