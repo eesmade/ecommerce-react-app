@@ -79,7 +79,7 @@ useEffect(()=>{
 							text: 'The item has been updated!'
 						})
 
-						navigate('/admin');
+						navigate('/admin/product');
 					}
 				})
         .catch(error => console.log(error))

@@ -38,8 +38,8 @@ export default function AppNavBar(){
 		         	user && user.isAdmin?
 		         	<Fragment>
 		         	<Nav.Link className='nav-item' as = {NavLink} to = '/'>Home</Nav.Link>
-		         	<Nav.Link  className='nav-item' as ={NavLink} to='/admin/products'>Products</Nav.Link>
-		         	<Nav.Link  className='nav-item' as ={NavLink} to='/admin/orders'>Orders</Nav.Link>
+		         	<Nav.Link  className='nav-item' as ={NavLink} to='/admin/product'>Products</Nav.Link>
+		         	<Nav.Link  className='nav-item' as ={NavLink} to='/admin/order'>Orders</Nav.Link>
 
 		         	</Fragment>
 
@@ -50,12 +50,10 @@ export default function AppNavBar(){
 		           <Nav.Link  className='nav-item' as = {NavLink} to = '/'>Home</Nav.Link>
 		           <Nav.Link  className='nav-item'  as = {NavLink} to = '/sale'>Sale</Nav.Link>
 		           <Nav.Link  className='nav-item'  as = {NavLink} to = '/shop'>Shop</Nav.Link>
-		           <Nav.Link  className='nav-item'  as = {NavLink} to = '/myOrders'>My Orders</Nav.Link>
+		           <Nav.Link  className='nav-item'  as = {NavLink} to = '/myOrders'>Order</Nav.Link>
 		            <NavDropdown title="Partners" id="navbarScrollingDropdown">
-		              <NavDropdown.Item href="#action5">Bergel</NavDropdown.Item>
-		              <NavDropdown.Item href="#action6">Cong Clothing</NavDropdown.Item>
-		              <NavDropdown.Item href="#action7">Mosh</NavDropdown.Item>
-		              <NavDropdown.Item href="#action8">Nemesis</NavDropdown.Item>
+		              <NavDropdown.Item href="https://bergelproject.com/">Bergel</NavDropdown.Item>
+		              <NavDropdown.Item href="https://nemesisclo.com/">Nemesis</NavDropdown.Item>
 		              <NavDropdown.Divider />
 		              <NavDropdown.Item href="#action9">
 		                Collaborate

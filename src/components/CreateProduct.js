@@ -60,7 +60,7 @@ export default function CreateProduct() {
 							text: 'The item has been added!'
 						})
 
-						navigate('/admin/products');
+						navigate('/admin/product');
 					}
 				})
         .catch(error => console.log(error))

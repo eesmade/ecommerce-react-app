@@ -2,6 +2,9 @@ import ProductCard from '../components/ProductCard.js';
 import {Fragment, useEffect, useState} from 'react';
 
 
+import image from '../images/bg.jpg'
+
+
 
 export default function Shop(){
 
@@ -28,8 +31,10 @@ useEffect(()=>{
 	return(
 
 		<Fragment>
-			<h1 className="text-center mt-3"> Shop </h1>
+			 <div style={{ backgroundImage:`url(${image})`,backgroundRepeat:"no-repeat",backgroundSize:"cover"}}>
+			{/*<h1 className="text-center py-3"> Shop </h1>*/}
 			{products}
+			</div>
 
 		</Fragment>
 

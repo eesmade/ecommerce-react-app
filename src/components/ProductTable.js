@@ -58,7 +58,7 @@
                 <td>{products.stocks}</td>
                 <td>{products.isActive}</td>
                 <td>
-                  <Button className="mx-2" as={Link} to='/product/update'>Update</Button>
+                  <Button className="mx-2"  as = {Link} to = {`/update/${products._id}`}>Update</Button>
                       {
                           isActive ?                    
                           <Button>

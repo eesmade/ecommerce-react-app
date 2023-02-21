@@ -15,6 +15,7 @@ import Sale from './pages/Sale.js';
 import ProductView from './components/ProductView.js'
 import CreateProduct from './components/CreateProduct.js'
 import UpdateProduct from './components/UpdateProduct.js'
+// import ArchiveProduct from './components/ArchiveProduct.js'
 
 
 import {useState,useEffect} from 'react'
@@ -55,8 +56,8 @@ export default function App() {
       <AppNavBar/>
         <Routes>
         {/*<Route path ='*' element = {<PageNotFound/>}/>*/}
-        <Route path ='/admin/products' element = {<ProductDashboard/>}/>
-        <Route path ='/admin/orders' element = {<OrderDashboard/>}/>
+        <Route path ='/admin/product' element = {<ProductDashboard/>}/>
+        <Route path ='/admin/order' element = {<OrderDashboard/>}/>
         <Route path ='/' element = {<Home/>}/>
         <Route path ='/register' element = {<Register/>}/>
         <Route path ='/login' element = {<Login/>}/>
@@ -65,7 +66,8 @@ export default function App() {
         <Route path ='/sale' element = {<Sale/>}/>
         <Route path ='/product/:productId' element = {<ProductView/>}/>
         <Route path ='/product/add' element = {<CreateProduct/>}/>
-        <Route path ='/product/update' element = {<UpdateProduct/>}/>
+        <Route path ='/update/:productId' element = {<UpdateProduct/>}/>
+        {/*<Route path ='/archive/:productId' element = {<ArchiveProduct/>}/>*/}
 
 
         </Routes>
