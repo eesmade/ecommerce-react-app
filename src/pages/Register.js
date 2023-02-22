@@ -9,7 +9,7 @@ import UserContext from '../UserContext.js'
 import Swal from 'sweetalert2'
 
 import logo from '../images/logo.png'
-
+import bg from '../images/bg2.jpg'
 
 
 
@@ -107,7 +107,7 @@ export default function() {
 		user ?
 		<Navigate to = '/*' />
 		:
-
+	<div style={{ backgroundImage:`url(${bg})`,backgroundRepeat:"no-repeat",backgroundSize:"cover"}}>
 		<Row className = "m-0 p-5">
 			<Col className = 'col-md-6 col-10 mx-auto bg-dark p-3'>
 				<Fragment>
@@ -215,5 +215,6 @@ export default function() {
 					 </Fragment>
 				</Col>
 		    </Row>
+		  </div>
 		)
 }

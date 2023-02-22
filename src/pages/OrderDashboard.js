@@ -1,8 +1,9 @@
+import OrderTable from '../components/OrderTable.js'
 
 import {useState, useEffect, Fragment} from 'react';
 import {Container, Row, Col } from 'react-bootstrap';
 
-
+import bg from '../images/bg2.jpg'
 
 export default function OrderDashboard(){
 
@@ -10,13 +11,15 @@ export default function OrderDashboard(){
 	return(
 
 		<Fragment>
-		<Container fluid className="bg-light py-3">
-         	<h2 className='mt-3 mb-5 text-center text-dark'>Orders</h2>
+		<Container fluid className="bg-light p-0">
+        <div className='bg' style={{ backgroundImage:`url(${bg})`,backgroundRepeat:"no-repeat",backgroundSize:"cover"}}>
+         	<h2 className='p-5 text-center text-dark'>Orders</h2>
                 <Row>
-                <Col >
-                    {/*<OrderTable/>*/}
+                <Col>
+                    <OrderTable/>
                 </Col>
                 </Row>
+                </div>
             </Container>
          </Fragment>
 		)

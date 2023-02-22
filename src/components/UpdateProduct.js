@@ -8,6 +8,8 @@ import UserContext from '../UserContext.js';
 import Swal from 'sweetalert2';
 import {Link} from 'react-router-dom';
 
+import logo from '../images/logo.png'
+
 export default function UpdateProduct() {
 
 // useStates
@@ -67,9 +69,9 @@ useEffect(()=>{
 					if(data==false){
 				// Error Alert Message
 						Swal.fire({
-							title: 'Something went wrong!',
-							icon: 'warning',
-							text: 'Please try again.'
+							title: 'Unauthorized!',
+                            icon: 'error',
+                            text: 'You do not have permission to perform this action.'
 						})
 					}else{
 				// Success Alert Message
@@ -88,14 +90,14 @@ useEffect(()=>{
   return (
 
     <Row className = "m-0 p-5">
-    			<Col className = 'col-md-6 col-10 mx-auto bg-light p-3'>
+    			<Col className = 'col-md-6 col-10 mx-auto bg-dark p-3'>
     				<Fragment>
-    					<h1 className="text-center mt-5">Update Product</h1>
+    					<div><img className="form-logo" src={logo}/></div>
     					<Form className="m-4" onSubmit={event => updateProduct(event)}>
 
     						{/*ProductName*/}
     						<Form.Group className="mb-3" controlId="formProductName">
-    					        <Form.Label>ProductName</Form.Label>
+    					        <Form.Label className='label'>ProductName</Form.Label>
     					        <Form.Control
     					        	type="text"
     					        	placeholder="Product Name"
@@ -107,7 +109,7 @@ useEffect(()=>{
 
     					      {/*Description*/}
     						<Form.Group className="mb-3" controlId="formProductDescription">
-    					        <Form.Label>Description</Form.Label>
+    					        <Form.Label className='label'>Description</Form.Label>
     					        <Form.Control
     					        	type="text"
     					        	placeholder="Description"
@@ -119,7 +121,7 @@ useEffect(()=>{
 
                             {/*Category*/}
                               <Form.Group className="mb-3" controlId="formProductCategory">
-                                <Form.Label>Category</Form.Label>
+                                <Form.Label className='label'>Category</Form.Label>
                                 <Form.Control
                                     type="text"
                                     placeholder="Category"
@@ -131,7 +133,7 @@ useEffect(()=>{
 
     					      {/*Price*/}
     					      <Form.Group className="mb-3" controlId="formPrice">
-    					        <Form.Label>Price</Form.Label>
+    					        <Form.Label className='label'>Price</Form.Label>
     					        <Form.Control 
     					        	placeholder="Price"
     					        	value = {price}
@@ -142,7 +144,7 @@ useEffect(()=>{
 
     					        {/*Stocks*/}
     					      <Form.Group className="mb-3" controlId="formStocks">
-    					        <Form.Label>Stocks</Form.Label>
+    					        <Form.Label className='label'>Stocks</Form.Label>
     					        <Form.Control 
     					        	placeholder="Stocks"
     					        	value = {stocks}
@@ -154,7 +156,7 @@ useEffect(()=>{
 
     					      <Form.Group className="d-flex justify-content-center mt-3">
     				
-    							  <Button variant="primary" type="submit" className="px-5">
+    							  <Button variant="danger" type="submit" className="px-5">
     						        Save Changes
     						      </Button>
     						     

@@ -9,13 +9,18 @@
   text-decoration: none;
 }
 
+.bg {
+  min-height: 100vh;
+}
+
 
 /*.btn{
   background-color: #C5261B;
 }*/
 
-/*NavBar Section*/
 
+
+/*NavBar Section*/
 
 #banner{
   color: white;
@@ -64,6 +69,7 @@
 }*/
 
 
+
 /*Login*/
 
 .form-logo{
@@ -79,4 +85,23 @@
 
 .label{
   color: white;
+}
+
+
+/*Table*/
+.edit-icon, .disable-icon, .enable-icon{
+  max-height: 20px;
+  max-width: 20px;
+}
+
+table {
+  background-color: white;
+  border: 3px solid ;
+  width: 800px;
+  height: 200px;
+  }
+
+
+th {
+  border-bottom: 1px solid black;
 }

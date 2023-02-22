@@ -2,7 +2,7 @@ import ProductCard from '../components/ProductCard.js';
 import {Fragment, useEffect, useState} from 'react';
 
 
-import image from '../images/bg.jpg'
+import bg from '../images/bg2.jpg'
 
 
 
@@ -31,7 +31,7 @@ useEffect(()=>{
 	return(
 
 		<Fragment>
-			 <div style={{ backgroundImage:`url(${image})`,backgroundRepeat:"no-repeat",backgroundSize:"cover"}}>
+			 <div className='bg' style={{ backgroundImage:`url(${bg})`,backgroundRepeat:"no-repeat",backgroundSize:"cover"}}>
 			{/*<h1 className="text-center py-3"> Shop </h1>*/}
 			{products}
 			</div>

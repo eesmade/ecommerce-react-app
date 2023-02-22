@@ -22,6 +22,29 @@ export default function ArchiveProduct(){
 			}
 			
 		})
+		.then(result => result.json())
+        .then(data => {
+					console.log(data)
+
+					if(data==false){
+				// Error Alert Message
+						Swal.fire({
+							title: 'Unauthorized!',
+                            icon: 'error',
+                            text: 'You do not have permission to perform this action.'
+						})
+					}else{
+				// Success Alert Message
+						Swal.fire({
+							title: 'Updated Successfully!',
+							icon: 'success',
+							text: 'The item has been updated!'
+						})
+
+						navigate('/admin/product');
+					}
+				})
+        .catch(error => console.log(error))
 
 	return(
 

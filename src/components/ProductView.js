@@ -12,6 +12,10 @@ export default function ProductView(){
 	const [category, setCategory] = useState('');
 	const [price,setPrice] = useState('')
 	const [stocks, setStocks] = useState('');
+	const [image, setImage] = useState('');
+	// const [quantity, setQuantity] = useState('');
+
+
 	const navigate = useNavigate()
 
 // useParams
@@ -32,6 +36,7 @@ export default function ProductView(){
 			setCategory(data.category)
 			setPrice(data.price)
 			setStocks(data.stocks)
+			setImage(data.image)
 
 		})
 
@@ -45,6 +50,10 @@ const order =(id) =>{
 				'Content-Type' :'application/json',
 				Authorization: `Bearer ${localStorage.getItem('token')}`
 			}
+			// ,
+			// body: JSON.stringify({
+			// 	quantity: quantity
+			// })
 		})
 		.then(result => result.json())
 		.then(data => {
@@ -53,7 +62,7 @@ const order =(id) =>{
 				Swal.fire({
 					title: 'Ordered Successfully',
 					icon: 'success',
-					text: 'Your transation number is #53890446.'
+					text: 'Your transaction number is #53890446.'
 				})
 				navigate ('/shop')
 			}
@@ -76,6 +85,7 @@ const order =(id) =>{
 	            <Col lg={{ span: 6, offset: 3 }}>
 	                <Card>
 	                    <Card.Body className="text-center">
+	                        <Card.Title>{image}</Card.Title>
 	                        <Card.Title>{productName}</Card.Title>
 	                        <Card.Text>{description}</Card.Text>
 	                         <Card.Subtitle>Category:</Card.Subtitle>
@@ -84,7 +94,7 @@ const order =(id) =>{
 	                        <Card.Text>PhP {price}</Card.Text>
 	                        <Card.Subtitle>Stocks</Card.Subtitle>
 	                        <Card.Text>{stocks}</Card.Text>
-	                        <Button variant="primary" onClick ={()=> order(productId)}>Order</Button>
+	                        <Button variant="danger" onClick ={()=> order(productId)}>Order</Button>
 	                    </Card.Body>        
 	                </Card>
 	            </Col>

@@ -4,6 +4,10 @@
  import UserContext from "../UserContext";
  import {Link} from "react-router-dom";
 
+// import bg from '../images/bg2.jpg'
+import edit from '../images/edit.png'
+import disable from '../images/disable.png'
+import enable from '../images/enable.png'
 
  export default function ProductTable() {
 
@@ -45,7 +49,7 @@
                 <th>Category</th>
                 <th>Price</th>
                 <th>Stocks</th>             
-                <th>IsActive</th>      
+                {/*<th>IsActive</th>      */}
                 <th>Actions</th>      
              </tr>
          </thead>
@@ -58,17 +62,17 @@
                 <td>{products.category}</td>
                 <td>{products.price}</td>
                 <td>{products.stocks}</td>
-                <td>{products.isActive}</td>
+                {/*<td>{products.isActive}</td>*/}
                 <td>
-                  <Button variant='warning' className="mx-2"  as = {Link} to = {`/update/${products._id}`}>Update</Button>
+                  <Button variant='none' className="mx-2"  as = {Link} to = {`/update/${products._id}`}><img className="edit-icon" src={edit}/></Button>
                       {
                          products.isActive ?                    
-                          <Button variant='secondary' as = {Link} to = {`/archive/${products._id}`}>
-                          Disable
+                          <Button variant='none' as = {Link} to = {`/archive/${products._id}`}>
+                          <img className="disable-icon" src={disable}/>
                           </Button>
                           :
-                          <Button variant='dark' as = {Link} to = {`/archive/${products._id}`}>
-                          Enable
+                          <Button variant='none' as = {Link} to = {`/archive/${products._id}`}>
+                           <img className="enable-icon" src={enable}/>
                           </Button>
                       }
               
@@ -80,6 +84,7 @@
 
        </Table>
      </Container>
+     
     </Fragment>
    );
  }

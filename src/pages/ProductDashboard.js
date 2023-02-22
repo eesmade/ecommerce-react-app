@@ -1,13 +1,12 @@
 import ProductTable from '../components/ProductTable.js'
-import ProductCard from '../components/ProductCard.js';
 
 import {useState, useEffect, Fragment, useContext} from 'react';
 import UserContext from '../UserContext.js';
 import {Navigate, useNavigate,Link} from 'react-router-dom';
-import {Tab, Tabs} from 'react-bootstrap/Tab';
 import {Container, Row, Col, Button } from 'react-bootstrap';
 
 
+import bg from '../images/bg2.jpg'
 
 export default function ProductDashboard(){
 
@@ -24,11 +23,13 @@ export default function ProductDashboard(){
 // user.isAdmin ?
 
 		<Fragment>
-		<Container fluid className="bg-light py-3">
+		
+		<Container fluid className="bg-light p-0">
+		<div className='bg' style={{ backgroundImage:`url(${bg})`,backgroundRepeat:"no-repeat",backgroundSize:"cover"}}>
          	{/*<h2 className='mt-3 text-center text-dark'>Products</h2>*/}
          		<Row >
-                    <Col className='d-flex justify-content-center mt-3 mb-5'>
-                        <Button as={Link} to='/product/add'>Add New Product</Button>
+                    <Col className='d-flex justify-content-center mt-3 mb-4'>
+                        <Button variant='danger' as={Link} to='/product/add'>Add Product</Button>
                     </Col>
                 </Row>
                 <Row>
@@ -36,8 +37,9 @@ export default function ProductDashboard(){
                     <ProductTable/>
                 </Col>
                 </Row>
-                
+                </div>
             </Container>
+            
          </Fragment>
 
 			// :

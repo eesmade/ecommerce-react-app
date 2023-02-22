@@ -1,12 +1,13 @@
 import {Button, Form,Row, Col} from 'react-bootstrap'
 import {Fragment} from 'react'
 
-
 import {useState, useEffect, useContext} from 'react';
 import {Navigate, useNavigate} from 'react-router-dom';
 import UserContext from '../UserContext.js';
 import Swal from 'sweetalert2';
 import {Link} from 'react-router-dom';
+
+import logo from '../images/logo.png'
 
 export default function CreateProduct() {
 
@@ -16,6 +17,7 @@ export default function CreateProduct() {
     const [category, setCategory] = useState('');
     const [price, setPrice] = useState('');
     const [stocks, setStocks] = useState('');
+    const [image, setImage] = useState('');
     
 
     const {user, setUser} = useContext(UserContext);
@@ -37,7 +39,8 @@ export default function CreateProduct() {
                 description:description,
                 category: category,
                 price: price,
-                stocks: stocks
+                stocks: stocks,
+                image: image
              
             })
         })
@@ -48,9 +51,9 @@ export default function CreateProduct() {
 					if(data==false){
 				// Error Alert Message
 						Swal.fire({
-							title: 'Something went wrong!',
-							icon: 'warning',
-							text: 'Please try again.'
+							title: 'Unauthorized!',
+							icon: 'error',
+							text: 'You do not have permission to perform this action.'
 						})
 					}else{
 				// Success Alert Message
@@ -69,14 +72,14 @@ export default function CreateProduct() {
   return (
 
     <Row className = "m-0 p-5">
-    			<Col className = 'col-md-6 col-10 mx-auto bg-light p-3'>
+    			<Col className = 'col-md-6 col-10 mx-auto bg-dark p-3'>
     				<Fragment>
-    					<h1 className="text-center mt-5">Add Product</h1>
+                    <div><img className="form-logo" src={logo}/></div>
     					<Form className="m-4" onSubmit={event => addProduct(event)}>
 
     						{/*ProductName*/}
     						<Form.Group className="mb-3" controlId="formProductName">
-    					        <Form.Label>ProductName</Form.Label>
+    					        <Form.Label className='label'>Product Name</Form.Label>
     					        <Form.Control
     					        	type="text"
     					        	placeholder="Product Name"
@@ -88,7 +91,7 @@ export default function CreateProduct() {
 
     					      {/*Description*/}
     						<Form.Group className="mb-3" controlId="formProductDescription">
-    					        <Form.Label>Description</Form.Label>
+    					        <Form.Label className='label'>Description</Form.Label>
     					        <Form.Control
     					        	type="text"
     					        	placeholder="Description"
@@ -100,7 +103,7 @@ export default function CreateProduct() {
 
     					      {/*Category*/}
                               <Form.Group className="mb-3" controlId="formProductCategory">
-                                <Form.Label>Category</Form.Label>
+                                <Form.Label className='label'>Category</Form.Label>
                                 <Form.Control
                                     type="text"
                                     placeholder="Category"
@@ -113,7 +116,7 @@ export default function CreateProduct() {
 
     					      {/*Price*/}
     					      <Form.Group className="mb-3" controlId="formPrice">
-    					        <Form.Label>Price</Form.Label>
+    					        <Form.Label className='label'>Price</Form.Label>
     					        <Form.Control 
     					        	placeholder="Price"
     					        	value = {price}
@@ -124,7 +127,7 @@ export default function CreateProduct() {
 
     					        {/*Stocks*/}
     					      <Form.Group className="mb-3" controlId="formStocks">
-    					        <Form.Label>Stocks</Form.Label>
+    					        <Form.Label className='label'>Stocks</Form.Label>
     					        <Form.Control 
     					        	placeholder="Stocks"
     					        	value = {stocks}
@@ -133,11 +136,22 @@ export default function CreateProduct() {
     					        	/>
     					      </Form.Group>
 
+                               {/*Image Link*/}
+                              <Form.Group className="mb-3" controlId="formImage">
+                                <Form.Label className='label'>Image File</Form.Label>
+                                <Form.Control 
+                                    placeholder="Image Link"
+                                    value = {image}
+                                    onChange = {event => setImage(event.target.value)}
+                                    required
+                                    />
+                              </Form.Group>
+
 
     					      <Form.Group className="d-flex justify-content-center mt-3">
     				
-    							  <Button variant="primary" type="submit" className="px-5">
-    						        Add Product
+    							  <Button variant="danger" type="submit" className="px-5">
+    						        Add New Product
     						      </Button>
     						     
     						  </Form.Group>

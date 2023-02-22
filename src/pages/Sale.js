@@ -1,7 +1,7 @@
 import ProductCard from '../components/ProductCard.js';
 import {Fragment, useEffect, useState} from 'react';
 
-
+import sale from '../images/salesale.jpg'
 
 export default function Sale(){
 
@@ -28,8 +28,10 @@ useEffect(()=>{
   return(
 
     <Fragment>
-      <h1 className="text-center mt-3"> SALE! SALE! SALE! </h1>
+    <div style={{ backgroundImage:`url(${sale})`,backgroundRepeat:"no-repeat",backgroundSize:"cover"}}>
+      <h1 className="text-center pt-5"> SALE! SALE! SALE! </h1>
       {products}
+      </div>
 
     </Fragment>
 

@@ -3,7 +3,7 @@ import './App.css';
 
 import AppNavBar from './components/AppNavBar.js';
 
-// import PageNotFound from "./pages/PageNotFound.js";
+import PageNotFound from "./pages/PageNotFound.js";
 import ProductDashboard from './pages/ProductDashboard.js';
 import OrderDashboard from './pages/OrderDashboard.js';
 import Home from './pages/Home.js';
@@ -11,7 +11,9 @@ import Register from './pages/Register.js';
 import Login from './pages/Login.js';
 import Logout from './pages/Logout.js';
 import Shop from './pages/Shop.js';
+// import MyOrder from './pages/MyOrder.js';
 import Sale from './pages/Sale.js';
+import Contact from './pages/Contact.js';
 import ProductView from './components/ProductView.js'
 import CreateProduct from './components/CreateProduct.js'
 import UpdateProduct from './components/UpdateProduct.js'
@@ -55,7 +57,7 @@ export default function App() {
     <Router>
       <AppNavBar/>
         <Routes>
-        {/*<Route path ='*' element = {<PageNotFound/>}/>*/}
+        <Route path ='*' element = {<PageNotFound/>}/>
         <Route path ='/admin/product' element = {<ProductDashboard/>}/>
         <Route path ='/admin/order' element = {<OrderDashboard/>}/>
         <Route path ='/' element = {<Home/>}/>
@@ -64,10 +66,12 @@ export default function App() {
         <Route path ='/logout' element = {<Logout/>}/>
         <Route path ='/shop' element = {<Shop/>}/>
         <Route path ='/sale' element = {<Sale/>}/>
+        {/*<Route path ='/myorders' element = {<MyOrder/>}/>*/}
         <Route path ='/product/:productId' element = {<ProductView/>}/>
         <Route path ='/product/add' element = {<CreateProduct/>}/>
         <Route path ='/update/:productId' element = {<UpdateProduct/>}/>
         <Route path ='/archive/:productId' element = {<ArchiveProduct/>}/>
+        <Route path ='/contact' element = {<Contact/>}/>
 
 
         </Routes>

@@ -9,6 +9,7 @@ import Swal from 'sweetalert2'
 
 
 import logo from '../images/logo.png'
+import bg from '../images/bg2.jpg'
 
 
 
@@ -121,7 +122,8 @@ export default function Login(){
 			user ?
 			<Navigate to = '/*' />
 			:
-		<Row className = "m-0 p-5">
+	<div className='bg' style={{ backgroundImage:`url(${bg})`,backgroundRepeat:"no-repeat",backgroundSize:"cover"}}>
+		<Row className = "p-5">
 		  <Col className = 'col-md-6 col-10 mx-auto bg-dark p-3'>
 			<Fragment>
 				<div><img className="form-logo" src={logo}/></div>
@@ -174,7 +176,9 @@ export default function Login(){
 				    </Form>
 				</Fragment>
 			 </Col>
+			
 	    </Row>
+	     </div>
 
 		)
 	
