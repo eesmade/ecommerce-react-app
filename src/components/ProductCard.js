@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 
 export default function ProductCard({productProp}) {
 
-	const {_id, productName, description, category, price, isActive, stocks, image} = productProp;
+	const {_id, productName, description, price, image} = productProp;
 
 // useStates
 	const [isDisabled,setIsDisabled] = useState(false)
@@ -38,7 +38,7 @@ export default function ProductCard({productProp}) {
 	<Row className = "mt-0 p-5 d-flex d-inline-flex text-center">
 	<Col>
 		<Card style={{ width: '18rem' }}>
-		      <Card.Img variant="top" src='' />
+		      <Card.Img variant="top" src={image} />
 		      <Card.Body>
 		      	<Card.Title>{productName}</Card.Title>
 		       	<Card.Text>{description}</Card.Text>
@@ -50,7 +50,7 @@ export default function ProductCard({productProp}) {
 		       	//if user is logged in
 		       		user?
 
-		        <Button as = {Link} to = {`/product/${_id}`} disabled={isDisabled} variant="danger">See details</Button>
+		        <Button as = {Link} to = {`/product/${_id}`} disabled={isDisabled} variant="danger">View</Button>
 		        :
 		        //if user is logged out
 		        <Button as = {Link} to ='/Login' variant="danger">Login</Button>

@@ -18,6 +18,7 @@ export default function UpdateProduct() {
     const [category, setCategory] = useState('');
     const [price, setPrice] = useState('');
     const [stocks, setStocks] = useState('');
+    const [image, setImage] = useState('');
     
 
     const {user, setUser} = useContext(UserContext);
@@ -37,6 +38,7 @@ useEffect(()=>{
             setCategory(data.category);
             setPrice(data.price);
             setStocks(data.stocks);
+            setImage(data.image);
         })
     },[productId])
 
@@ -58,7 +60,8 @@ useEffect(()=>{
                 description:description,
                 category: category,
                 price: price,
-                stocks: stocks
+                stocks: stocks,
+                image: image
              
             })
         })
@@ -152,6 +155,17 @@ useEffect(()=>{
     					        	required
     					        	/>
     					      </Form.Group>
+
+                              {/*Image Link*/}
+                              <Form.Group className="mb-3" controlId="formImage">
+                                <Form.Label className='label'>Image File</Form.Label>
+                                <Form.Control 
+                                    placeholder="Image Link"
+                                    value = {image}
+                                    onChange = {event => setImage(event.target.value)}
+                                    required
+                                    />
+                              </Form.Group>
 
 
     					      <Form.Group className="d-flex justify-content-center mt-3">

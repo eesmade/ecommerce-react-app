@@ -1,7 +1,7 @@
 import {Fragment} from 'react'
 import {Container, Row, Col, Button, Table} from "react-bootstrap";
 
-import MyOrderDetails from '../components/MyOrderDetails.js'
+// import OrderCard from '../components/OrderCard.js'
 
 
 export default function MyOrder(){
@@ -10,7 +10,7 @@ export default function MyOrder(){
 
 		<Fragment>
 		 <Container className='text-center'>
-		 	<MyOrderDetails/>
+		 	{/*<OrderCard/>*/}
 		 </Container>
 		</Fragment>
 		)
