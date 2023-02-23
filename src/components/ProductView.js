@@ -13,7 +13,7 @@ export default function ProductView(){
 	const [price,setPrice] = useState('')
 	const [stocks, setStocks] = useState('');
 	const [image, setImage] = useState('');
-	const [quantity, setQuantity] = useState('');
+	const [quantity, setQuantity] = useState(1);
 
 
 	const navigate = useNavigate()
@@ -59,11 +59,10 @@ const order =(id) =>{
 			headers:	{
 				'Content-Type' :'application/json',
 				Authorization: `Bearer ${localStorage.getItem('token')}`
-			}
-			// ,
-			// body: JSON.stringify({
-			// 	quantity: quantity
-			// })
+			},
+			body: JSON.stringify({
+				quantity: quantity
+			})
 		})
 		.then(result => result.json())
 		.then(data => {
