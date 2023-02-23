@@ -13,13 +13,23 @@ export default function ProductView(){
 	const [price,setPrice] = useState('')
 	const [stocks, setStocks] = useState('');
 	const [image, setImage] = useState('');
-	// const [quantity, setQuantity] = useState('');
+	const [quantity, setQuantity] = useState('');
 
 
 	const navigate = useNavigate()
 
 // useParams
 	const {productId} = useParams();
+
+
+// Quantity
+	const addQuantity = () => setQuantity(quantity+1);
+	const minusQuantity = () => {
+		if (quantity > 1) {
+			setQuantity(quantity-1)
+		}
+	}
+
 
 // useEffect
 	useEffect(()=>{
@@ -91,10 +101,23 @@ const order =(id) =>{
 	                         <Card.Subtitle>Category:</Card.Subtitle>
 	                        <Card.Text>{category}</Card.Text>
 	                        <Card.Subtitle>Price:</Card.Subtitle>
-	                        <Card.Text>PhP {price}</Card.Text>
+	                        <Card.Text>₱ {price*quantity}</Card.Text>
 	                        <Card.Subtitle>Stocks</Card.Subtitle>
 	                        <Card.Text>{stocks}</Card.Text>
-	                        <Button variant="danger" onClick ={()=> order(productId)}>Order</Button>
+
+	                       <Row className='d-flex justify-content-center align-items-center'>
+	                        <Col md="auto">
+			            	<Button className="px-3" variant="dark" onClick = {minusQuantity}>-</Button>
+			            	</Col>
+			            	<Col md="auto">
+			            	<Card.Text>{quantity}</Card.Text>
+			            	</Col>
+			            	<Col md="auto">
+			            	<Button className="px-3" variant="dark" onClick = {addQuantity}>+</Button>
+			            	</Col>
+			            	</Row>
+
+	                        <Button className='mt-4' variant="danger" onClick ={()=> order(productId)}>Order</Button>
 	                    </Card.Body>        
 	                </Card>
 	            </Col>
