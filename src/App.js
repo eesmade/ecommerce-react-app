@@ -40,7 +40,7 @@ export default function App() {
 
 // useEffect
   useEffect(()=>{
-    console.log(user)
+    // console.log(user)
   },[user]);
 
   const unSetUser = ()=>{

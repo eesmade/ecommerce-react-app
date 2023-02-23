@@ -23,13 +23,13 @@ export default function ProductView(){
 
 // useEffect
 	useEffect(()=>{
-		console.log(productId)
+		// console.log(productId)
 
 		// browser address
 		fetch (`${process.env.REACT_APP_API_URL}/product/${productId}`)
 		.then(result => result.json())
 		.then(data => {
-			console.log(data)
+			// console.log(data)
 
 			setProductName(data.productName)
 			setDescription(data.description)
@@ -57,7 +57,7 @@ const order =(id) =>{
 		})
 		.then(result => result.json())
 		.then(data => {
-			console.log(data);
+			// console.log(data);
 			if(data){
 				Swal.fire({
 					title: 'Ordered Successfully',

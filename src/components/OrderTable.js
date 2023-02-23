@@ -25,7 +25,7 @@ export default function OrderTable(){
          })
          .then(result => result.json())
          .then(data =>{
-            console.log(data)
+            // console.log(data)
             setOrders(data)
          })
          

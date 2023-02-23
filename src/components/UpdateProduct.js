@@ -32,7 +32,7 @@ useEffect(()=>{
         fetch(`${process.env.REACT_APP_API_URL}/product/update/${productId}`)
         .then(result => result.json())
         .then(data => {
-            console.log(data)
+            // console.log(data)
             setProductName(data.productName);
             setDescription(data.description);
             setCategory(data.category);
@@ -67,7 +67,7 @@ useEffect(()=>{
         })
         .then(result => result.json())
         .then(data => {
-					console.log(data)
+					// console.log(data)
 
 					if(data==false){
 				// Error Alert Message
@@ -87,7 +87,7 @@ useEffect(()=>{
 						navigate('/admin/product');
 					}
 				})
-        .catch(error => console.log(error))
+        // .catch(error => console.log(error))
     }
 
   return (

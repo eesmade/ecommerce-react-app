@@ -24,7 +24,7 @@ export default function ArchiveProduct(){
 		})
 		.then(result => result.json())
         .then(data => {
-					console.log(data)
+					// console.log(data)
 
 					if(data==false){
 				// Error Alert Message
@@ -44,7 +44,8 @@ export default function ArchiveProduct(){
 						navigate('/admin/product');
 					}
 				})
-        .catch(error => console.log(error))
+        // .catch(error => console.log(error))
+        
 
 	return(
 

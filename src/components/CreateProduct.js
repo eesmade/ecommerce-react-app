@@ -46,7 +46,7 @@ export default function CreateProduct() {
         })
         .then(result => result.json())
         .then(data => {
-					console.log(data)
+					// console.log(data)
 
 					if(data==false){
 				// Error Alert Message
@@ -66,7 +66,7 @@ export default function CreateProduct() {
 						navigate('/admin/product');
 					}
 				})
-        .catch(error => console.log(error))
+        // .catch(error => console.log(error))
     }
 
   return (

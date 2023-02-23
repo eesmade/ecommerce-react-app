@@ -30,7 +30,7 @@ import enable from '../images/enable.png'
          })
          .then(result => result.json())
          .then(data =>{
-            console.log(data)
+            // console.log(data)
             setProducts(data)
          })
          

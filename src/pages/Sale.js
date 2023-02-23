@@ -15,7 +15,7 @@ useEffect(()=>{
     fetch(`${process.env.REACT_APP_API_URL}/product/active`)
     .then(result => result.json())
     .then(data => {
-      console.log(data)
+      // console.log(data)
 
       //to change value of products
       setProducts(data.map(product =>{

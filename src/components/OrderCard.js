@@ -25,7 +25,7 @@ export default function MyOrderDetails(){
          })
          .then(result => result.json())
          .then(data =>{
-            console.log(data)
+            // console.log(data)
             setOrder(data)
          })
          

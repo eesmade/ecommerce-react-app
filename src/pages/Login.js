@@ -67,7 +67,7 @@ export default function Login(){
 		})
 		.then(result => result.json())
 		.then(data => {
-			console.log(data)
+			// console.log(data)
 
 			if (data === false){
 	// Error Alert Message
@@ -107,7 +107,7 @@ export default function Login(){
 		})
 		.then(result => result.json())
 		.then(data => {
-			console.log(data)
+			// console.log(data)
 			setUser({
 				id: data._id,
 				isAdmin: data.isAdmin
