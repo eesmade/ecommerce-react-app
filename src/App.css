@@ -62,11 +62,23 @@
 }*/
 
 
-/*Flippable Card*/
-/*.flippable-card-container{
-  height: 500px;
-  width: 300px;
-}*/
+/*ProductCard*/
+.card-container{
+  height: 20vh;
+  width: 20vw;
+
+
+}
+
+.card-image-catalog{
+  height: 30vh;
+  width: 15vw;
+}
+
+.card-image-view{
+  height: 40vh;
+  width: 10vw;
+}
 
 
 

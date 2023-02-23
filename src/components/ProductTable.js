@@ -49,6 +49,7 @@ import enable from '../images/enable.png'
                 <th>Category</th>
                 <th>Price</th>
                 <th>Stocks</th>             
+                {/*<th>Image</th>             */}
                 {/*<th>IsActive</th>      */}
                 <th>Actions</th>      
              </tr>
@@ -62,6 +63,7 @@ import enable from '../images/enable.png'
                 <td>{products.category}</td>
                 <td>{products.price}</td>
                 <td>{products.stocks}</td>
+                {/*<td>{products.image}</td>*/}
                 {/*<td>{products.isActive}</td>*/}
                 <td>
                   <Button variant='none' className="mx-2"  as = {Link} to = {`/update/${products._id}`}><img className="edit-icon" src={edit}/></Button>

@@ -1,7 +1,9 @@
 import {useState,useEffect} from 'react';
-import {Container,Row,Col,Card,Button} from 'react-bootstrap'
+import {Container,Row,Col,Button} from 'react-bootstrap'
+import Card from 'react-bootstrap/Card';
 import {useParams, useNavigate} from 'react-router-dom';
 import Swal from 'sweetalert2';
+
 
 
 export default function ProductView(){
@@ -91,18 +93,18 @@ const order =(id) =>{
 	return(
 			<Container className="mt-5">
 	        <Row>
-	            <Col lg={{ span: 6, offset: 3 }}>
+	            <Col lg={{ span: 5, offset: 3 }}>
 	                <Card>
 	                    <Card.Body className="text-center">
-	                        <Card.Title>{image}</Card.Title>
+	                        <Card.Img className='card-image-view' src={image}/>
 	                        <Card.Title>{productName}</Card.Title>
 	                        <Card.Text>{description}</Card.Text>
 	                         <Card.Subtitle>Category:</Card.Subtitle>
 	                        <Card.Text>{category}</Card.Text>
 	                        <Card.Subtitle>Price:</Card.Subtitle>
 	                        <Card.Text>₱ {price*quantity}</Card.Text>
-	                        <Card.Subtitle>Stocks</Card.Subtitle>
-	                        <Card.Text>{stocks}</Card.Text>
+	                        {/*<Card.Subtitle>Stocks</Card.Subtitle>*/}
+	                        {/*<Card.Text>{stocks}</Card.Text>*/}
 
 	                       <Row className='d-flex justify-content-center align-items-center'>
 	                        <Col md="auto">

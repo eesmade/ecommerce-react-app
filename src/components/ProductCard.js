@@ -1,4 +1,5 @@
-import {Button, Card, Row, Col} from 'react-bootstrap'
+import {Button, Row, Col} from 'react-bootstrap'
+import Card from 'react-bootstrap/Card';
 import {useState, useEffect, useContext, Fragment} from 'react';
 import UserContext from '../UserContext.js'
 import {Link} from 'react-router-dom'
@@ -35,15 +36,15 @@ export default function ProductCard({productProp}) {
 	return(
 
 <Fragment>
-	<Row className = "mt-0 p-5 d-flex d-inline-flex text-center">
-	<Col>
-		<Card style={{ width: '18rem' }}>
-		      <Card.Img variant="top" src={image} />
+	<Row className = "p-3 d-inline-flex text-center">
+	<Col lg={{ span: 3, offset: 3 }}>
+		<Card className='card-container'>
 		      <Card.Body>
-		      	<Card.Title>{productName}</Card.Title>
-		       	<Card.Text>{description}</Card.Text>
-		       	<Card.Subtitle>Price</Card.Subtitle>
-		       	<Card.Text>{price}</Card.Text>
+		      	<Card.Img className='card-image-catalog' variant="top" src={image} />
+		      	<Card.Title><strong>{productName}</strong></Card.Title>
+		       	<Card.Text className='mt-2'><em>{description}</em></Card.Text>
+		       	{/*<Card.Subtitle>Price</Card.Subtitle>*/}
+		       	<Card.Text>₱{price}</Card.Text>
 		      
 
 		        {
