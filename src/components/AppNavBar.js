@@ -50,7 +50,7 @@ export default function AppNavBar(){
 		           <Nav.Link  className='nav-item' as = {NavLink} to = '/'>Home</Nav.Link>
 		           <Nav.Link  className='nav-item'  as = {NavLink} to = '/sale'>Sale</Nav.Link>
 		           <Nav.Link  className='nav-item'  as = {NavLink} to = '/shop'>Shop</Nav.Link>
-		           <Nav.Link  className='nav-item'  as = {NavLink} to = '/myOrders'>Order</Nav.Link>
+		           {/*<Nav.Link  className='nav-item'  as = {NavLink} to = '/myOrders'>Order</Nav.Link>*/}
 		            <NavDropdown title="Partners" id="navbarScrollingDropdown">
 		              <NavDropdown.Item href="https://bergelproject.com/">Bergel</NavDropdown.Item>
 		              <NavDropdown.Item href="https://nemesisclo.com/">Nemesis</NavDropdown.Item>

@@ -68,20 +68,20 @@ const order =(id) =>{
 		})
 		.then(result => result.json())
 		.then(data => {
-			// console.log(data);
-			if(data){
+			console.log(data);
+			if(data==false){
 				Swal.fire({
-					title: 'Ordered Successfully',
-					icon: 'success',
-					text: 'Your transaction number is #53890446.'
+					title: 'Error Processing transaction',
+					icon: 'error',
+					text: 'Please try again.'
 				})
 				navigate ('/shop')
 			}
 			else {
 				Swal.fire({
-					title: 'Error Processing transaction',
-					icon: 'error',
-					text: 'Please try again.'
+					title: 'Ordered Successfully',
+					icon: 'success',
+					text: 'Your transaction number is #53890446.'
 				})
 			}
 		})
