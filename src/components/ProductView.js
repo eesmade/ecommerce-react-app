@@ -1,14 +1,20 @@
-import {useState,useEffect} from 'react';
-import {Container,Row,Col,Button} from 'react-bootstrap'
+import {useContext, useState, useEffect} from 'react';
+import {Container, Row, Col, Button} from 'react-bootstrap'
 import Card from 'react-bootstrap/Card';
 import {useParams, useNavigate} from 'react-router-dom';
 import Swal from 'sweetalert2';
+import UserContext from '../UserContext';
 
 
 
 export default function ProductView(){
 
+// useContext
+const {user,setUser} = useContext(UserContext);
+
 // useStates
+
+	const [userId,setUserId] = useState({user})
 	const [productName,setProductName] = useState('')
 	const [description,setDescription] = useState('')
 	const [category, setCategory] = useState('');
@@ -16,6 +22,7 @@ export default function ProductView(){
 	const [stocks, setStocks] = useState('');
 	const [image, setImage] = useState('');
 	const [quantity, setQuantity] = useState(1);
+	const [totalOrder, setTotalOrder] = useState('');
 
 
 	const navigate = useNavigate()
@@ -26,11 +33,14 @@ export default function ProductView(){
 
 // Quantity
 	const addQuantity = () => setQuantity(quantity+1);
-	const minusQuantity = () => {
+	const subQuantity = () => {
 		if (quantity > 1) {
 			setQuantity(quantity-1)
 		}
 	}
+
+// Transaction Number
+	const getRandom = Math.floor(Math.random() * 1000000000)
 
 
 // useEffect
@@ -55,7 +65,7 @@ export default function ProductView(){
 	},[productId])
 
 
-const order =(id) =>{
+const order =() =>{
 		fetch(`${process.env.REACT_APP_API_URL}/order/${productId}`,{
 			method: 'POST',
 			headers:	{
@@ -63,7 +73,12 @@ const order =(id) =>{
 				Authorization: `Bearer ${localStorage.getItem('token')}`
 			},
 			body: JSON.stringify({
-				quantity: quantity
+				userId: userId,
+				productId:productId,
+				productName: productName,
+				description: description,
+				quantity: quantity,              
+				totalOrder:totalOrder
 			})
 		})
 		.then(result => result.json())
@@ -81,7 +96,7 @@ const order =(id) =>{
 				Swal.fire({
 					title: 'Ordered Successfully',
 					icon: 'success',
-					text: 'Your transaction number is #53890446.'
+					text: `Your transaction number is #${getRandom}.`
 				})
 			}
 		})
@@ -102,13 +117,15 @@ const order =(id) =>{
 	                         <Card.Subtitle>Category:</Card.Subtitle>
 	                        <Card.Text>{category}</Card.Text>
 	                        <Card.Subtitle>Price:</Card.Subtitle>
+	                        <Card.Text>₱ {price}</Card.Text>
+	                        <Card.Subtitle>Total Order:</Card.Subtitle>
 	                        <Card.Text>₱ {price*quantity}</Card.Text>
 	                        {/*<Card.Subtitle>Stocks</Card.Subtitle>*/}
 	                        {/*<Card.Text>{stocks}</Card.Text>*/}
 
 	                       <Row className='d-flex justify-content-center align-items-center'>
 	                        <Col md="auto">
-			            	<Button className="px-3" variant="dark" onClick = {minusQuantity}>-</Button>
+			            	<Button className="px-3" variant="dark" onClick = {subQuantity}>-</Button>
 			            	</Col>
 			            	<Col md="auto">
 			            	<Card.Text>{quantity}</Card.Text>
@@ -118,7 +135,8 @@ const order =(id) =>{
 			            	</Col>
 			            	</Row>
 
-	                        <Button className='mt-4' variant="danger" onClick ={()=> order(productId)}>Order</Button>
+	                        <Button className='mt-4' variant="danger" onClick ={event => order(event, productId)}>Order</Button>
+	                     
 	                    </Card.Body>        
 	                </Card>
 	            </Col>
