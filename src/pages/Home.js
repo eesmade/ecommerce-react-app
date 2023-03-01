@@ -1,9 +1,10 @@
 import {Fragment} from 'react';
 import Banner from '../components/Banner.js'
 import Highlights from '../components/Highlights.js'
-// import CourseCard from '../components/CourseCard.js'
+import Shop from './Shop.js';
 
-import bg from '../images/bg2.jpg'
+
+import bg from '../images/bg.png'
 
 
 export default function Home(){
@@ -15,6 +16,7 @@ export default function Home(){
 		
 			<Banner/>
 			<Highlights/>
+			<Shop/>
 		</div>
 		</Fragment>
 

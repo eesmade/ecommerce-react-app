@@ -2,6 +2,7 @@ import ProductCard from '../components/ProductCard.js';
 import {Fragment, useEffect, useState} from 'react';
 
 
+// import bg from '../images/bg.png'
 import bg from '../images/bg2.jpg'
 
 

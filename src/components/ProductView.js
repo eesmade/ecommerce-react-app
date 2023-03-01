@@ -5,7 +5,8 @@ import {useParams, useNavigate} from 'react-router-dom';
 import Swal from 'sweetalert2';
 import UserContext from '../UserContext';
 
-
+import add from '../images/add.png'
+import sub from '../images/sub.png'
 
 export default function ProductView(){
 
@@ -106,36 +107,50 @@ const order =() =>{
 
 
 	return(
-			<Container className="mt-5">
-	        <Row>
-	            <Col lg={{ span: 5, offset: 3 }}>
-	                <Card>
+			<Container>
+	        <Row className="p-5">
+	            <Col lg={{ span: 5}}>
+	                <div className="p-4">
 	                    <Card.Body className="text-center">
 	                        <Card.Img className='card-image-view' src={image}/>
-	                        <Card.Title>{productName}</Card.Title>
+	                        <Card.Title><h2>{productName}</h2></Card.Title>
 	                        <Card.Text>{description}</Card.Text>
-	                         <Card.Subtitle>Category:</Card.Subtitle>
+	                        <Card.Subtitle><strong>Product ID</strong></Card.Subtitle>
+	                        <Card.Text>{productId}</Card.Text>
+	                         <Card.Subtitle><strong>Category</strong></Card.Subtitle>
 	                        <Card.Text>{category}</Card.Text>
-	                        <Card.Subtitle>Price:</Card.Subtitle>
+	                        <Card.Subtitle><strong>Price</strong></Card.Subtitle>
 	                        <Card.Text>₱ {price}</Card.Text>
-	                        <Card.Subtitle>Total Order:</Card.Subtitle>
-	                        <Card.Text>₱ {price*quantity}</Card.Text>
-	                        {/*<Card.Subtitle>Stocks</Card.Subtitle>*/}
-	                        {/*<Card.Text>{stocks}</Card.Text>*/}
-
+	                    </Card.Body>        
+	                </div>
+	            </Col>
+	            
+	            <Col lg={{ span: 5, offset:1}}>
+	            <Card className="mt-4 p-3">
+	                    <Card.Body className="text-center p-5">
+	                        
+	                       <h2>ORDER SUMMARY</h2>
+	                       <div className="mt-5">
+	                       <Card.Title><h6></h6></Card.Title>
+	                       <h6 className="mt-3"><strong>Product</strong></h6>
+	                        <Card.Text>{productName} | {description}</Card.Text>
+	                       <Card.Subtitle  className="mt-4"><strong>Quantity</strong></Card.Subtitle>
+	                       </div>
 	                       <Row className='d-flex justify-content-center align-items-center'>
 	                        <Col md="auto">
-			            	<Button className="px-3" variant="dark" onClick = {subQuantity}>-</Button>
+			            	<Button className="px-3" variant="none" onClick = {subQuantity}><img className="sub-icon" src={sub}/></Button>
 			            	</Col>
 			            	<Col md="auto">
 			            	<Card.Text>{quantity}</Card.Text>
 			            	</Col>
 			            	<Col md="auto">
-			            	<Button className="px-3" variant="dark" onClick = {addQuantity}>+</Button>
+			            	<Button className="px-3" variant="none" onClick = {addQuantity}><img className="add-icon" src={add}/></Button>
 			            	</Col>
+			            	<h6 className="mt-5"><strong>Total</strong></h6>
+	                        <Card.Text>₱ {price*quantity}</Card.Text>
 			            	</Row>
 
-	                        <Button className='mt-4' variant="danger" onClick ={event => order(event, productId)}>Order</Button>
+	                        <Button className='mt-5 w-100' variant="danger" onClick ={event => order(event, productId)}>Order</Button>
 	                     
 	                    </Card.Body>        
 	                </Card>

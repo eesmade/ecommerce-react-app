@@ -101,12 +101,19 @@
 }
 
 
-/*Table*/
-.edit-icon, .disable-icon, .enable-icon{
+/*Buttons*/
+.edit-icon, .disable-icon, .enable-icon, .add-icon{
   max-height: 20px;
   max-width: 20px;
 }
 
+ .sub-icon{
+  max-height: 40px;
+  max-width: 37px;
+}
+
+
+/*Table*/
 table {
   background-color: white;
   border: 3px solid ;

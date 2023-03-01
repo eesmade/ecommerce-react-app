@@ -37,7 +37,7 @@ export default function ProductCard({productProp}) {
 
 <Fragment>
 	<Row className = "p-3 d-inline-flex text-center">
-	<Col lg={{ span: 3, offset: 3 }}>
+	<Col className="col-10 col-md-3 col-sm-4 col-xl-2 col-4 mx-auto m-2">
 		<Card className='card-container'>
 		      <Card.Body>
 		      	<Card.Img className='card-image-catalog' variant="top" src={image} />
