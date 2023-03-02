@@ -1,5 +1,6 @@
 import ProductCard from '../components/ProductCard.js';
 import {Fragment, useEffect, useState} from 'react';
+import {Container, Row, Col} from 'react-bootstrap'
 
 import sale from '../images/salesale.jpg'
 
@@ -28,10 +29,10 @@ useEffect(()=>{
   return(
 
     <Fragment>
-    <div style={{ backgroundImage:`url(${sale})`,backgroundRepeat:"no-repeat",backgroundSize:"cover"}}>
-      <h1 className="text-center pt-5"> SALE! SALE! SALE! </h1>
+    <Container className="fluid">
+      <h1 className="text-center pt-4 pb-2 text-danger"> SALE! SALE! SALE! </h1>
       {products}
-      </div>
+      </Container>
 
     </Fragment>
 

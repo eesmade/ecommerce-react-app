@@ -1,4 +1,4 @@
-import {Button, Row, Col} from 'react-bootstrap'
+import {Container, Button, Row, Col} from 'react-bootstrap'
 import Card from 'react-bootstrap/Card';
 import {useState, useEffect, useContext, Fragment} from 'react';
 import UserContext from '../UserContext.js'
@@ -36,31 +36,32 @@ export default function ProductCard({productProp}) {
 	return(
 
 <Fragment>
-	<Row className = "p-3 d-inline-flex text-center">
-	<Col className="col-10 col-md-3 col-sm-4 col-xl-2 col-4 mx-auto m-2">
-		<Card className='card-container'>
-		      <Card.Body>
-		      	<Card.Img className='card-image-catalog' variant="top" src={image} />
-		      	<Card.Title><strong>{productName}</strong></Card.Title>
-		       	<Card.Text className='mt-2'><em>{description}</em></Card.Text>
-		       	{/*<Card.Subtitle>Price</Card.Subtitle>*/}
-		       	<Card.Text>₱{price}</Card.Text>
-		      
+	
+	<Row className = "p-3 d-flex d-md-inline-flex text-center">
+		<Col className="col-xs-12 col-md-8">
+			<Card className='card-container'>
+			      <Card.Body>
+			      	<Card.Img className='card-image-catalog' variant="top" src={image} />
+			      	<h6><strong>{productName}</strong></h6>
+			       	<p className='mt-2'><em>{description}</em></p>
+			       	{/*<Card.Subtitle>Price</Card.Subtitle>*/}
+			       	<Card.Text>₱{price}</Card.Text>
+			      
 
-		        {
-		       	//if user is logged in
-		       		user?
+			        {
+			       	//if user is logged in
+			       		user?
 
-		        <Button as = {Link} to = {`/product/${_id}`} disabled={isDisabled} variant="danger">View</Button>
-		        :
-		        //if user is logged out
-		        <Button as = {Link} to ='/Login' variant="danger">Login</Button>
+			        <Button as = {Link} to = {`/product/${_id}`} disabled={isDisabled} variant="danger">View</Button>
+			        :
+			        //if user is logged out
+			        <Button as = {Link} to ='/Login' variant="danger">Login</Button>
 
 
-		        }
+			        }
 
-		      </Card.Body>
-		    </Card>
+			      </Card.Body>
+			    </Card>
 
 
 		

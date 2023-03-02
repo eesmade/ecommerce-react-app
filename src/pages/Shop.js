@@ -1,5 +1,7 @@
 import ProductCard from '../components/ProductCard.js';
 import {Fragment, useEffect, useState} from 'react';
+import {Container, Button, Row, Col} from 'react-bootstrap'
+
 
 
 // import bg from '../images/bg.png'
@@ -32,11 +34,13 @@ useEffect(()=>{
 	return(
 
 		<Fragment>
-			 <div className='bg' style={{ backgroundImage:`url(${bg})`,backgroundRepeat:"no-repeat",backgroundSize:"cover"}}>
-			{/*<h1 className="text-center py-3"> Shop </h1>*/}
+			<Container className="fluid">
+			
+			
 			{products}
-			</div>
-
+			
+			 
+			</Container>
 		</Fragment>
 
 		)

@@ -12,12 +12,9 @@ export default function Home(){
 
 	return (
 		<Fragment>
-		<div className='bg' style={{ backgroundImage:`url(${bg})`,backgroundRepeat:"no-repeat",backgroundSize:"cover"}}>
-		
 			<Banner/>
 			<Highlights/>
 			<Shop/>
-		</div>
 		</Fragment>
 
 

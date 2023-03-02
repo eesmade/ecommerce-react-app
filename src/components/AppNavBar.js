@@ -28,7 +28,7 @@ export default function AppNavBar(){
 		</div>
 
 		{/*Main Nav*/}
-		<Navbar collapseOnSelect expand="lg" className="navbar navbar-dark mt-3 mb-0 pb-0 container-fluid">
+		<Navbar collapseOnSelect expand="lg" className="navbar navbar-dark mt-3 mb-0 pb-0 container-fluid " >
 		       <Navbar.Brand href="#"><img className="logo mx-4" src={logo} height="70px" width="70px"/></Navbar.Brand>
 		       <Navbar.Toggle aria-controls="responsive-navbar-nav" className="mx-2" />
 		       <Navbar.Collapse id="responsive-navbar-nav">
