@@ -1,10 +1,10 @@
-import {Button,Container, Form, Nav, Navbar,NavDropdown} from 'react-bootstrap'
+import {Nav, Navbar,NavDropdown} from 'react-bootstrap'
 
 // Images
 import logo from '../images/logo.png'
 import logout from '../images/logout.png'
-import {Link, NavLink} from 'react-router-dom'
-import {Fragment, useState,useEffect,useContext} from 'react'
+import {NavLink} from 'react-router-dom'
+import {Fragment,useContext} from 'react'
 
 import UserContext from '../UserContext.js'
 
@@ -13,7 +13,7 @@ export default function AppNavBar(){
 
 // useStates
 	// allows to consume the UserContext object and its properties for user validation;
-	const {user,setUser} = useContext(UserContext)
+	const {user} = useContext(UserContext)
 
 
 	return(
@@ -55,7 +55,7 @@ export default function AppNavBar(){
 		              <NavDropdown.Item href="https://bergelproject.com/">Bergel</NavDropdown.Item>
 		              <NavDropdown.Item href="https://nemesisclo.com/">Nemesis</NavDropdown.Item>
 		              <NavDropdown.Divider />
-		              <NavDropdown.Item href="#action9">
+		              <NavDropdown.Item href="/contact">
 		                Collaborate
 		              </NavDropdown.Item>
 		            </NavDropdown>
