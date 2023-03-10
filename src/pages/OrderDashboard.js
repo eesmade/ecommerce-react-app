@@ -13,7 +13,7 @@ export default function OrderDashboard(){
 		<Fragment>
 		<Container fluid className="bg-light p-0">
         <div className='bg' style={{ backgroundImage:`url(${bg})`,backgroundRepeat:"no-repeat",backgroundSize:"cover"}}>
-         	<h2 className='p-5 text-center text-dark'>Orders</h2>
+         	<h2 className='p-4 text-center text-dark'>Orders</h2>
                 <Row>
                 <Col>
                     <OrderTable/>

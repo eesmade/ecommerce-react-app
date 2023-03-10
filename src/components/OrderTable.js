@@ -43,6 +43,7 @@ export default function OrderTable(){
 		            <th>Product Name</th>
 		            <th>Description</th>
 		            <th>Purchase Details</th>
+		            <th>Quantity</th>
 		            <th>Total Order</th>    
 		         </tr>
 		     </thead>
@@ -54,6 +55,7 @@ export default function OrderTable(){
 		            <td>{orders.productName}</td>
 		            <td>{orders.description}</td>
 		            <td>{orders.purchasedOn}</td>
+		            <td>{orders.quantity}</td>
 		            <td>{orders.totalOrder}</td>
 		            </tr>
 		        </tbody>
