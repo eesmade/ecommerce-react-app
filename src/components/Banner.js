@@ -20,10 +20,10 @@ export default function Banner(){
 
 	return(
 	<Fragment>
-		{/*<Row className = "m-0 p-3">
-		<h1 className ="text-center"> WHAT'S NEW? </h1>
+		<Row className = "m-0 p-3">
+		{/*<h1 className ="text-center"> WHAT'S NEW? </h1>*/}
 				<Col className = "d-flex justify-content-center">
-					<div className="col-5 mt-2">
+					<div className="col-5">
 		              <div className="input-group">
 		                <input
 		                  type="text"
@@ -39,11 +39,9 @@ export default function Banner(){
 		            </div>
 				</Col>
 			</Row>
-*/}
-	{/*Tiles*/}
 
 		<Container class1="home-wrapper-1 px-5 py-0 container-fluid">
-			<Row className="row py-5">
+			<Row className="row">
 	          <Col className="col col-5">
 	              <img src= {l2} className="img-fluid rounded-3 main-banner" alt="main banner"/>
 	           </Col>
