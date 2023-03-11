@@ -124,7 +124,7 @@ export default function Login(){
 			:
 	<div className='bg' style={{ backgroundImage:`url(${bg})`,backgroundRepeat:"no-repeat",backgroundSize:"cover"}}>
 		<Row className = "p-5">
-		  <Col className = 'col-md-6 col-10 mx-auto bg-dark p-3'>
+		  <Col className = 'col-10 col-md-10 col-lg-7 mx-auto bg-dark p-3'>
 			<Fragment>
 				<div><img className="form-logo" src={logo}/></div>
 				<Form className='m-5' onSubmit={event => login(event)}>

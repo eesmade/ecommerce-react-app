@@ -109,7 +109,7 @@ export default function() {
 		:
 	<div style={{ backgroundImage:`url(${bg})`,backgroundRepeat:"no-repeat",backgroundSize:"cover"}}>
 		<Row className = "m-0 p-5">
-			<Col className = 'col-md-6 col-10 mx-auto bg-dark p-3'>
+			<Col className = 'col-12 col-md-10 col-lg-7 mx-auto bg-dark p-3'>
 				<Fragment>
 					<div><img className="form-logo" src={logo}/></div>
 					<Form className="m-4" onSubmit={event => register(event)}>
